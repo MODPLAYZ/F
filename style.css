@@ -1,0 +1,388 @@
+/* تحديد لون الخلفية للصفحة */
+body {
+    background-color: #85deef37; /* اختر اللون الذي تريده */
+}
+
+/* تصميم كل اقتراح */
+.autocomplete-suggestion {
+  display: flex; /* جعل المحتوى داخل الاقتراح يكون بشكل خطي */
+  align-items: center; /* محاذاة العناصر رأسياً */
+  padding: 10px; /* إضافة مسافة داخلية */
+  cursor: pointer; /* تغيير شكل المؤشر عند المرور فوق العنصر */
+  transition: background-color 0.1s ease; /* تأثير سلس لتغيير اللون عند التمرير */
+  width: 300px; /* عرض الاقتراح */
+}
+
+
+/* تصميم الصورة داخل الاقتراح */
+.autocomplete-suggestion img {
+  width: 40px; /* تحديد عرض الصورة */
+  height: 40px; /* تحديد ارتفاع الصورة */
+  border-radius: 25px; /* جعل الصور دائرية */
+  margin-right: 5px; /* مسافة بين الصورة والنص */
+  padding: 6px; /* إضافة padding للصورة */
+}
+
+/* النص داخل الاقتراح */
+.autocomplete-suggestion span {
+  font-size: 17px; /* حجم الخط */
+  color: #333; /* لون النص */
+}
+
+/* تصميم نتائج البحث (الاقتراحات) */
+.sg {
+   
+  z-index: 999; /* تحديد ترتيب العنصر ليكون فوق العناصر الأخرى */
+  position: absolute; /* تموضع العنصر بشكل مطلق */
+  top: 247px; /* المسافة من الأعلى */
+  left: 54px; /* المسافة من اليمين */
+  border-radius: 20px; /* حواف مدورة للمربع */
+}
+
+/* تصميم النص في الصفحة */
+.text {
+  position: absolute; 
+  top: 70%; /* المسافة من الأعلى */
+  left: 15%; /* المسافة من اليسار */
+}
+
+/* تصميم الصورة في الجزء العلوي */
+.iod {
+  position: absolute;  
+  top: 8px; /* المسافة من الأعلى */
+  left: 2%; /* المسافة من اليسار */
+  height: 45px; /* ارتفاع الصورة */
+  width: 45px; /* عرض الصورة */
+  border-radius: 30px; /* جعل الصورة دائرية */
+  z-index: 1000;
+  position: fixed;
+  border: 2px solid black;
+}
+
+/* تصميم النص الرئيسي (عنوان الموقع) */
+.disc {
+  position: absolute;
+  top: 8%; /* المسافة من الأعلى */
+  left: 6%; /* المسافة من اليسار */
+  text-align: center; /* محاذاة النص في المنتصف */
+}
+
+/* تصميم الحاوية الخاصة بمربع البحث */
+.InputContainer {
+  width: 340px; /* عرض الحاوية */
+  height: 50px; /* ارتفاع الحاوية */
+  display: flex; /* جعل العناصر داخل الحاوية في سطر واحد */
+  align-items: center; /* محاذاة العناصر رأسياً */
+  justify-content: center; /* محاذاة العناصر أفقياً */
+  background: linear-gradient(to bottom, rgb(109, 254, 233), rgb(160, 165, 254)); /* خلفية تدريجية */
+  border-radius: 13px; /* حواف مدورة */
+  overflow: hidden; /* إخفاء أي محتوى يخرج عن حدود الحاوية */
+  cursor: pointer; /* تغيير شكل المؤشر عند التمرير */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075); /* إضافة ظل خفيف */
+  position: fixed; /* جعل الحاوية ثابتة على الصفحة */
+  top: 4%; /* المسافة من الأعلى */
+  left: 50%; /* المسافة من اليسار */
+  transform: translate(-50%, -50%); /* تمركز الحاوية بشكل دقيق */
+  padding: 10px; /* إضافة padding داخل الحاوية */
+  z-index: 10; /* تحديد ترتيب العنصر بالنسبة للعناصر الأخرى */
+  transition: all 0.3s ease-in-out; /* تأثير سلس لتغيير الحجم */
+}
+
+/* تصميم حقل الإدخال */
+.input {
+  width: 270px; /* عرض حقل الإدخال */
+  height: 40px; /* ارتفاع حقل الإدخال */
+  border: none; /* إزالة الحدود */
+  outline: none; /* إزالة التأثير عند التركيز */
+  caret-color: rgb(0, 0, 0); /* تحديد لون المؤشر داخل الحقل */
+  background-color: rgb(255, 255, 255); /* تحديد لون الخلفية */
+  border-radius: 30px; /* جعل حواف حقل الإدخال مدورة */
+  padding-left: 15px; /* مسافة داخلية من اليسار */
+  letter-spacing: 0.8px; /* مسافة بين الحروف */
+  color: rgb(19, 19, 19); /* لون النص */
+  font-size: 13.4px; /* حجم الخط */
+  position: absolute;
+  right: 5px; /* المسافة من اليسار */
+  transition: all 0.1s ease-in-out; /* تأثير سلس لتغيير الحجم */
+  
+}
+
+/* تكبير الحاوية عند التركيز */
+.InputContainer:focus-within {
+  height: 420px; /* زيادة ارتفاع الحاوية عند التركيز */
+  border-radius: 35px; /* تعديل الحواف لتكون مدورة أكثر */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* إضافة ظل أكبر */
+}
+
+/* تصميم زر البرامج */
+.apps {
+  background: #fff432; /* لون الخلفية */
+  font-family: inherit; /* استخدام نفس خط الصفحة */
+  padding: 0.6em 1.3em; /* إضافة padding حول النص */
+  font-weight: 900; /* جعل النص عريضاً */
+  font-size: 15px; /* حجم النص */
+  border: 3px solid #000000; /* إضافة حدود للزر */
+  border-radius: 0.4em; /* جعل الحواف مدورة */
+  cursor: pointer; /* تغيير شكل المؤشر عند التمرير */
+  position: absolute;
+  top: 23%; /* المسافة من الأعلى */
+  right: 17%; /* المسافة من اليمين */
+  color: #000000; /* لون النص */
+}
+
+/* تصميم زر الألعاب */
+.games {
+  background: #fff432; /* لون الخلفية */
+  font-family: inherit; /* استخدام نفس خط الصفحة */
+  padding: 0.6em 1.3em; /* إضافة padding حول النص */
+  font-weight: 900; /* جعل النص عريضاً */
+  font-size: 15px; /* حجم النص */
+  border: 3px solid #000000; /* إضافة حدود للزر */
+  border-radius: 0.4em; /* جعل الحواف مدورة */
+  cursor: pointer; /* تغيير شكل المؤشر عند التمرير */
+  position: absolute;
+  top: 23%; /* المسافة من الأعلى */
+  left: 17%; /* المسافة من اليسار */
+  color: #000000; /* لون النص */
+}
+
+/* تصميم البطاقة */
+.card {
+    width: 110px; /* عرض البطاقة */
+    height: 210px; /* ارتفاع البطاقة */
+    border-radius: 20px; /* حواف مستديرة للبطاقة */
+    padding: 8px; /* إضافة padding داخل البطاقة */
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px; /* إضافة ظل للبطاقة */
+    background-image: linear-gradient(#806a88, #e8c0f88f, #ffffff 50%, #fffdfd); /* خلفية تدرجية */
+    text-decoration: none; /* إزالة خط النص تحت الرابط */
+    overflow: hidden; /* إخفاء أي محتوى زائد */
+    position: absolute;
+    transition: transform 0.3s, box-shadow 0.3s; /* إضافة تأثير عند التحويم */
+    border: 3px solid #000000; /* إضافة حواف بيضاء بسماكة 3px */
+    box-shadow: 0 4px 17px rgba(79,3,79,0.729);
+}
+
+/* صورة البطاقة */
+.card-image {
+    width: 101%; /* عرض الصورة داخل البطاقة */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    display: block; /* لجعل الصورة تظهر كعنصر بلوك */
+    margin: 0 auto; /* توسيط الصورة أفقياً */
+    margin-top: 4px; /* إضافة مسافة من الأعلى */
+    border-radius: 18px; /* حواف مدورة للصورة */
+}
+
+.card-title {
+    font-size: 1.2em; /* حجم النص */
+    font-weight: bold; /* سمك النص */
+    color: #000000; /* لون النص */
+    text-align: center; /* محاذاة النص في المنتصف */
+    position: relative; /* يسمح بتحريك النص */
+    top: -3px; /* تحريك النص لأسفل */
+}
+
+/* وصف البطاقة */
+.card-description {
+    font-size: 0.8em;
+    color: #000000;
+    text-align: center; /* محاذاة النص في المنتصف */
+}
+
+/* تخصيص مواضع البطاقات */
+
+/* البطاقة الأولى */
+.card-1 {
+    top: 270px; /* المسافة من الأعلى */
+    right: 20px; /* المسافة من اليمين */
+}
+
+/* البطاقة الثانية */
+.card-2 {
+    top: 270px; /* المسافة من الأعلى */
+    left: 20px; /* المسافة من اليسار */
+}
+
+/* البطاقة الثالثة */
+.card-3 {
+    top: 525px; /* المسافة من الأعلى */
+    right: 20px; /* المسافة من اليمين */
+}
+
+.card-4 {
+  top: 525px; /* المسافة من الأعلى */
+  left: 20px; /* المسافة من اليسار */
+}
+
+.card-5 {
+  top: 780px; /* المسافة من الأعلى */
+  left: 20px; /* المسافة من اليسار */
+}
+
+
+
+.card-6 {
+  top: 780px; /* المسافة من الأعلى */
+  right: 20px; /* المسافة من اليسار */
+}
+
+
+
+.card-7 {
+  top: 1040px; /* المسافة من الأعلى */
+  left: 20px; /* المسافة من اليسار */
+}
+
+.card-8 {
+  top: 1040px; /* المسافة من الأعلى */
+  right: 20px; /* المسافة من اليسار */
+}
+
+
+.card-9 {
+  top: 1299px; /* المسافة من الأعلى */
+  left: 20px; /* المسافة من اليسار */
+}
+
+
+.card-10 {
+  top: 1299px; /* المسافة من الأعلى */
+  right: 20px; /* المسافة من اليسار */
+}
+
+
+
+.swipe-container {
+  display: flex;
+  overflow-x: scroll;  /* يسمح بالتمرير أفقيًا */
+  gap: 20px;  /* المسافة بين البطاقات */
+  padding: 38px;
+  scroll-snap-type: x mandatory;  /* لتحديد تزامن التمرير مع البطاقات */
+position: relative;
+top: 1560px;
+  
+}
+
+.card2s {
+  width: 100px;
+  height: 196px;
+  background: linear-gradient(to bottom, #620539a7, #fc96967c); /* خلفية متدرجة */
+  border-radius: 17px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding: 10px;
+  scroll-snap-align: start; /* يجعل البطاقة تلتقط في البداية */
+
+  border: 5px solid #000000;
+  
+}
+
+
+
+.card2s img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.card2s h3 {
+  font-size: 16px;
+  color: #333;
+}
+
+.card2s p {
+  font-size: 14px;
+  color: #000000ba;
+}
+
+
+.card2s {
+  text-decoration: none; /* إزالة الخط تحت النص */
+}
+
+
+.dsr{
+  position: absolute;
+  top: 2230px;
+  text-align: center;
+  color: #000000;
+  background: #2decda;
+  width: 360px;
+  left: 0px;
+  border-radius: 30px;
+}
+
+.far{
+  position: absolute;
+  top: 1837px;
+  text-align: center;
+  left: 30px;
+  color: #000000;
+  background: #85deef37;
+  border-radius: 30px;
+}
+.card3s {
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(to bottom, #620539a7, #fc96967c); /* خلفية متدرجة */
+  border-radius: 17px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding: 10px;
+  scroll-snap-align: start; /* يجعل البطاقة تلتقط في البداية */
+
+  border: 5px solid #000000;
+  
+}
+
+
+
+.card3s img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.card3s h3 {
+  font-size: 16px;
+  color: #333;
+}
+
+.card3s p {
+  font-size: 14px;
+  color: #000000ba;
+}
+
+
+.card3s {
+  text-decoration: none; /* إزالة الخط تحت النص */
+}
+
+
+        .telg {
+            font-family: inherit;
+            font-size: 18px;
+            background: linear-gradient(to bottom, #009ecfc7 0%, #2da7ff7a 100%);
+            color: white;
+            padding: 0.8em 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            position: absolute;
+            top: 2160px;
+            left: 40px;
+            height: 42px;
+            min-width: 180px;
+            white-space: nowrap;
+        }
+
+        .telg span {
+            margin-left: 10px;
+        }
