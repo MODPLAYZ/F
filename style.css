@@ -1,7 +1,7 @@
 /* تحديد لون الخلفية للصفحة */
 body {
     background-color: #85deef37;
-    min-height: 350vh;
+    min-height: 330vh;
     width: 360px; /* يجعل العرض 100% من عرض نافذة المتصفح */
     margin: 0;
 }
